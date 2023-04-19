@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JS</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        // 1. Imprimir el primer número tantas veces como indique el segundo
+        let num = 2;
+        let repeat = 20;
+        let count = 0;
+
+        document.write('<pre>');
+        for (let i = 0; i < repeat; i++) {
+            document.write(num);
+            count++;
+
+            if (count === 8) {
+                document.write('<br/>');
+                count = 0;
+            }
+        }
+        document.write('</pre>');
+
+        document.write('<br/>');
+
+        // 2. Imprimir una pirámide a partir de la columna 20, de 3 filas por 5 columnas
+        let rows = 3;
+        let columns = 5;
+        let screenWidth = 80;
+        let centerOffset = Math.floor((screenWidth - columns) / 2);
+
+        for (let i = 0; i < rows; i++) {
+            document.write('<pre>');
+            let spaces = centerOffset - (i * 2);
+            let line = '';
+
+            for (let j = 0; j < spaces; j++) {
+                line += ' ';
+            }
+
+            for (let k = 0; k < (2 * i + 1); k++) {
+                if (i === rows - 1 && (k === 0 || k === 2 * i)) {
+                    line += '*';
+                } else {
+                    line += '0';
+                }
+            }
+
+            document.write(line);
+            document.write('</pre>');
+            document.write('<br/>');
+        }
+    </script>
+</body>
+
+</html>
